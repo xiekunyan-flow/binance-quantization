@@ -13,9 +13,12 @@ class BinanceAPI(object):
     BASE_URL_V3 = "https://api.binance.com/api/v3"
     PUBLIC_URL = "https://www.binance.com/exchange/public/product"
 
-    def __init__(self, key, secret):
-        self.key = key
-        self.secret = secret
+    def __init__(self, auth):
+        self.key           = auth.key
+        self.secret        = auth.secret
+        self.BASE_URL_GET  = auth.baseUrlGet
+        self.BASE_URL_POST = auth.baseUrlPost
+        self.PUBLIC_URL    = auth.publicUrl
 
     def ping(self):
         path = "%s/ping" % self.BASE_URL_V3

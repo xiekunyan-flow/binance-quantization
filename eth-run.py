@@ -18,7 +18,8 @@ class Run_Main():
 
     def loop_run(self):
         while True:
-            cur_market_price = binan.get_ticker_price(runbet.get_cointype()) # 当前交易对市价
+            cur_market_price = binan.get_ticker_price(
+                runbet.get_cointype()) # 当前交易对市价
             grid_buy_price = runbet.get_buy_price()  # 当前网格买入价格
             grid_sell_price = runbet.get_sell_price() # 当前网格卖出价格
             quantity = runbet.get_quantity()   # 买入量
